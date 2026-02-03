@@ -28,7 +28,8 @@
                 <span class="star" data-value="5">★</span>
             </div>
 
-            <input type="hidden" id="rating">
+            <input type="hidden" id="rating" name="rating">
+
 
             <textarea id="message" placeholder="Write your feedback..." required></textarea>
 

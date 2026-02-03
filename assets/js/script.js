@@ -5,6 +5,27 @@ const limit = 5;
 const feedbackContainer = document.getElementById("feedbackContainer");
 const loadMoreBtn = document.getElementById("loadMore");
 
+
+const stars = document.querySelectorAll(".star");
+const ratingInput = document.getElementById("rating");
+
+stars.forEach((star, index) => {
+    star.addEventListener("click", () => {
+        const ratingValue = index + 1;
+
+        // ✅ STORE RATING VALUE
+        ratingInput.value = ratingValue;
+
+        // Reset all stars
+        stars.forEach(s => s.classList.remove("active"));
+
+        // Highlight selected stars
+        for (let i = 0; i < ratingValue; i++) {
+            stars[i].classList.add("active");
+        }
+    });
+});
+
 /* ================= SUBMIT FEEDBACK ================= */
 
 form.addEventListener("submit", function (e) {
